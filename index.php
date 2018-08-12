@@ -8,7 +8,7 @@ require_once("cfg/call.php");
 require_once("functions.php");
 
 
-echo "<h1>The Basis</h1>";
+echo "<h1>Web Coin Tool</h1>";
 
 $peer_info = $bitcoin->getpeerinfo();
 $hipools=count(array_keys($peer_info));
