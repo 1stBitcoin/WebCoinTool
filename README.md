@@ -66,7 +66,7 @@ and change:
 
 <Directory /var/www/>
         Options Indexes FollowSymLinks
-        AllowOverride None
+	AllowOverride None
         Require all granted
 </Directory>
 
@@ -76,7 +76,6 @@ to:
         AllowOverride All
         Require all granted
 </Directory>
-
 
 That will allow .htaccess file to work for further enhanced security.
 ```sh
