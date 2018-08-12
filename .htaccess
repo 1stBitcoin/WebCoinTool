@@ -1,0 +1,19 @@
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+DirectoryIndex index.php
+
+<FilesMatch "^php5?\.(ini|cgi)$">
+Order Deny,Allow
+Deny from All
+Allow from env=REDIRECT_STATUS
+</FilesMatch>
+
+Order Allow,Deny
+Allow from All
+deny from 5.9.144.
+deny from 176.9.2.
+deny from 78.140.140.
+
