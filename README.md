@@ -102,7 +102,7 @@ sudo chmod 0755 /var/www/html/ip/ -R
 
 Preview
 ----
-![GitHub Logo](https://raw.githubusercontent.com/1stBitcoin/WebCoinTool/blob/master/screenshot.png "Screenshot")
+![GitHub Logo](https://github.com/1stBitcoin/WebCoinTool/blob/master/screenshot.png "Screenshot")
 
 http://80.211.188.146/
 
