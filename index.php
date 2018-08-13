@@ -13,7 +13,7 @@ echo "<h1>Web Coin Tool</h1>";
 $peer_info = $bitcoin->getpeerinfo();
 $hipools=count(array_keys($peer_info));
 
-echo "Conected to " . $hipools . " nodes.<br>";
+echo "Connected to " . $hipools . " nodes.<br>";
 echo build_table($peer_info);
 echo "<br>";
 
