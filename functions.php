@@ -2,13 +2,15 @@
 
 function build_table($array){
     // start table
-    $html = '<table>';
+    $html = '<table border="1">';
     // header row
     $html .= '<tr>';
     foreach($array[0] as $key=>$value){
             $html .= '<th>' . htmlspecialchars($key) . '</th>';
-		if($key=='addr'){
-		$html .= '<th>place</th>';
+		
+	    // in case of ip is true, add td with country info
+		if($key=='addr' or $key=='addrlocal'){
+		$html .= '<th>host</th><th>place</th>';
 		}
         }
     $html .= '</tr>';
@@ -22,7 +24,7 @@ function build_table($array){
 		// in case of ip is true, add td with country info
 		$value3 = explode(":", $value2);
 		if(filter_var($value3[0], FILTER_VALIDATE_IP)) {
-		$html .= '<td>' . get_ip_country($value3[0]) . '</td>';
+		$html .= '<td>' .  gethostbyaddr($value3[0]) . '</td><td>' . get_ip_country($value3[0]) . '</td>';
 		}
         }
         $html .= '</tr>';
@@ -33,9 +35,7 @@ function build_table($array){
 return $html;
 }
 
-
-
-
+// Caching of country to ip. Reset by deleting content of "ip/" directory
 function get_ip_country($ip=null){
     $path = 'ip/';
     if($ip == null) return 0;
